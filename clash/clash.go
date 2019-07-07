@@ -1,10 +1,10 @@
-package main
+package clash
 
 import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/megyland/clash-go/models"
+	"github.com/megyland/clash-go/clash/models"
 	"io"
 	"net/http"
 	"net/url"
