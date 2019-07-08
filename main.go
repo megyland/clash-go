@@ -39,29 +39,69 @@ func main() {
 	}
 	fmt.Println(prettyPrint(clanMembers))*/
 
-	warLog, _, err := client.Clans.GetWarLog(context.Background(), "#28GQRLV2J", &clash.Options{Limit: 3})
+	// TODO: Test with a public clan
+	/*warLog, _, err := client.Clans.GetWarLog(context.Background(), "#28GQRLV2J", &clash.Options{Limit: 3})
 	if err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Println(prettyPrint(warLog))
+	fmt.Println(prettyPrint(warLog))*/
 
-	currentWar, _, err := client.Clans.GetCurrentWar(context.Background(), "#28GQRLV2J")
+	// TODO: Test with a public clan
+	/*currentWar, _, err := client.Clans.GetCurrentWar(context.Background(), "#28GQRLV2J")
 	if err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Println(prettyPrint(currentWar))
+	fmt.Println(prettyPrint(currentWar))*/
 
-	currentWarLeagueGroup, _, err := client.Clans.GetCurrentWarLeagueGroup(context.Background(), "#28GQRLV2J")
+	// TODO: Test with a public clan
+	/*currentWarLeagueGroup, _, err := client.Clans.GetCurrentWarLeagueGroup(context.Background(), "#28GQRLV2J")
 	if err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Println(prettyPrint(currentWarLeagueGroup))
+	fmt.Println(prettyPrint(currentWarLeagueGroup))*/
 
-	currentWarLeagueWar, _, err := client.Clans.GetClanLeagueWar(context.Background(), "#28GQRLV2J")
+	// TODO: Test with a public clan
+	/*currentWarLeagueWar, _, err := client.Clans.GetClanLeagueWar(context.Background(), "#28GQRLV2J")
 	if err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Println(prettyPrint(currentWarLeagueWar))
+	fmt.Println(prettyPrint(currentWarLeagueWar))*/
+
+	/*locationList, _, err := client.Locations.List(context.Background(), nil)
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(locationList))*/
+
+	/*location, _, err := client.Locations.Get(context.Background(), "32000087")
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(location))*/
+
+	/*locationRankingClan, _, err := client.Locations.GetClanRankings(context.Background(), "32000087", &clash.Options{Limit: 10})
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(locationRankingClan))*/
+
+	/*locationRankingPlayer, _, err := client.Locations.GetPlayerRankings(context.Background(), "32000087", &clash.Options{Limit: 10})
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(locationRankingPlayer))*/
+
+	/*locationRankingClanVersus, _, err := client.Locations.GetClanVersusRankings(context.Background(), "32000087", &clash.Options{Limit: 10})
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(locationRankingClanVersus))*/
+
+	locationRankingPlayerVersus, _, err := client.Locations.GetPlayerVersusRankings(context.Background(), "32000087", &clash.Options{Limit: 10})
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(locationRankingPlayerVersus))
 }
 
 func prettyPrint(i interface{}) string {
