@@ -33,11 +33,35 @@ func main() {
 	}
 	fmt.Println(prettyPrint(clanResults))*/
 
-	clanMembers, _, err := client.Clans.GetMembers(context.Background(), "#28GQRLV2J", &clash.Options{Limit: 1})
+	/*clanMembers, _, err := client.Clans.GetMembers(context.Background(), "#28GQRLV2J", &clash.Options{Limit: 1})
 	if err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Println(prettyPrint(clanMembers))
+	fmt.Println(prettyPrint(clanMembers))*/
+
+	warLog, _, err := client.Clans.GetWarLog(context.Background(), "#28GQRLV2J", &clash.Options{Limit: 3})
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(warLog))
+
+	currentWar, _, err := client.Clans.GetCurrentWar(context.Background(), "#28GQRLV2J")
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(currentWar))
+
+	currentWarLeagueGroup, _, err := client.Clans.GetCurrentWarLeagueGroup(context.Background(), "#28GQRLV2J")
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(currentWarLeagueGroup))
+
+	currentWarLeagueWar, _, err := client.Clans.GetClanLeagueWar(context.Background(), "#28GQRLV2J")
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(currentWarLeagueWar))
 }
 
 func prettyPrint(i interface{}) string {
