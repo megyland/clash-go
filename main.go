@@ -97,11 +97,35 @@ func main() {
 	}
 	fmt.Println(prettyPrint(locationRankingClanVersus))*/
 
-	locationRankingPlayerVersus, _, err := client.Locations.GetPlayerVersusRankings(context.Background(), "32000087", &clash.Options{Limit: 10})
+	/*locationRankingPlayerVersus, _, err := client.Locations.GetPlayerVersusRankings(context.Background(), "32000087", &clash.Options{Limit: 10})
 	if err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Println(prettyPrint(locationRankingPlayerVersus))
+	fmt.Println(prettyPrint(locationRankingPlayerVersus))*/
+
+	/*leagues, _, err := client.Leagues.List(context.Background(), nil)
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(leagues))*/
+
+	/*league, _, err := client.Leagues.Get(context.Background(), "29000000")
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(league))*/
+
+	leagueSeason, _, err := client.Leagues.GetLeagueSeason(context.Background(), "29000022", nil)
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(leagueSeason))
+
+	seasonPlayersRanking, _, err := client.Leagues.GetLeagueSeasonRankings(context.Background(), "29000022", "2019-02", nil)
+	if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Println(prettyPrint(seasonPlayersRanking))
 }
 
 func prettyPrint(i interface{}) string {

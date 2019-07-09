@@ -75,6 +75,10 @@ type (
 // Clash of Clan API docs: https://developer.clashofclans.com/api-docs/index.html#!/locations/getLocations
 func (s *LocationsService) List(ctx context.Context, opt *Options) (*LocationList, *Response, error) {
 	u := "locations"
+	u, err := addOptions(u, opt)
+	if err != nil {
+		return nil, nil, err
+	}
 	req, err := s.client.NewRequest("GET", u, nil)
 	if err != nil {
 		return nil, nil, err
