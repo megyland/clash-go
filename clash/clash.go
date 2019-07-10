@@ -17,7 +17,6 @@ import (
 const (
 	defaultBaseURL = "https://api.clashofclans.com/v1/"
 	userAgent      = "go-clash"
-	token          = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImJhZDA1NTAxLWVhNWQtNDI3Yy1iM2MwLTBkNzUxMDQ4NjNhMiIsImlhdCI6MTU2MjQyMzEyMCwic3ViIjoiZGV2ZWxvcGVyLzkyMjFmZjM1LWRkNjctNTQ0ZC00ZTI5LTQ4ZThlOTgwZmZjNSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjEwOS4xNC4xMTQuMTczIl0sInR5cGUiOiJjbGllbnQifV19.s0qxcdluiJr3MifW_E6jOEq6ZTY6-Nc-SYB_3lsQAmfO5c9GMkCQQv1ZpArUmIkzc0sbrDO2-KYt8VdsnU3dWg"
 )
 
 type Client struct {
@@ -65,7 +64,7 @@ func addOptions(s string, opt interface{}) (string, error) {
 // provided, a new http.Client will be used. To use API methods which require
 // authentication, provide an http.Client that will perform the authentication
 // for you (such as that provided by the golang.org/x/oauth2 library).
-func NewClient(httpClient *http.Client) *Client {
+func NewClient(httpClient *http.Client, token string) *Client {
 	if httpClient == nil {
 		httpClient = &http.Client{}
 	}
